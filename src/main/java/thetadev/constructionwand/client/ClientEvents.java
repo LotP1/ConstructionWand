@@ -29,7 +29,7 @@ public class ClientEvents
 		if(player == null) return;
 		if(WandUtil.holdingWand(player) == null) return;
 
-		boolean ctrlState = Screen.hasControlDown();
+		boolean ctrlState = Screen.hasControlDown() && Screen.hasShiftDown();
 		if(ctrlPressed != ctrlState) {
 			ctrlPressed = ctrlState;
 			PacketQueryUndo packet = new PacketQueryUndo(ctrlPressed);
